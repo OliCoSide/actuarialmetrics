@@ -1,5 +1,4 @@
-# actuarialmetrics
- actuarialmetrics package 
+
 
 
 
@@ -32,8 +31,23 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-<h3 align="center"> actuarialmetrics </h3>
+<h1 align="center"> actuarialmetrics (R package)</h3>
 
+<!-- Access -->
+## Access
+
+```
+## Install the package
+devtools::install_github("Olicoside/actuarialmetrics")
+
+## Load the package
+library("actuarialmetrics")
+```
+
+<!-- About -->
+## About
+
+Package for basic metrics and graphs related to actuarial science. Useful and elegant visualisation based on `ggplot2`, but applied to actuarial science. 
 
 <!-- ROADMAP -->
 ## Contributeur
@@ -44,7 +58,7 @@
 
 <!-- CONTACT -->
 ## Contact
-devtools::install_github("Olicoside/actuarialmetrics")
+
 [Olivier Côté](mailto:olivier.cote.12@ulaval.ca)
 
 Project Link: [https://github.com/OliCoSide/actuarialmetrics](https://github.com/OliCoSide/actuarialmetrics)
