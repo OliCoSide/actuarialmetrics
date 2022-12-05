@@ -49,8 +49,14 @@ library("actuarialmetrics")
 
 Package for basic metrics and graphs related to actuarial science. Useful and elegant visualisation based on `ggplot2`, but applied to actuarial science. 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Example -->
+## Example
 
+**Add a a basic example and screenshot (if applicable)**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Contributors
