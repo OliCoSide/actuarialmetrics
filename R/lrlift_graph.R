@@ -2,7 +2,8 @@
 #' @export
 lrlift_graph <- function(table_list,
                          colors = "SunsetDark",
-                         Prem_names = c(table_list$ref_name, table_list$comp_name)){
+                         Prem_names = c(table_list$ref_name,
+                                        table_list$comp_name)){
   
   ## we get the table from the list 
   table <- table_list$table %>% 

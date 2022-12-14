@@ -1,7 +1,8 @@
 
 #' @export
 dbl_lift_chart <- function(table_list,
-                           Prem_names = c("P_ref", "P_comp"),
+                           Prem_names = c(table_list$ref_name,
+                                          table_list$comp_name),
                            palette = "Dark2"){
   
   ## we get the table from the list 
