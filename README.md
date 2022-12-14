@@ -54,7 +54,20 @@ Package for basic metrics and graphs related to actuarial science. Useful and el
 <!-- Example -->
 ## Example
 
-**Add a a basic example and screenshot (if applicable)**
+Here is a basic example, which shows the need for an english implementation (which should be the default)
+```
+table_to_g <- actuarialmetrics::get_lr_table(preds %>% 
+                                 mutate(n = 1),
+                               ref_name = "ign",
+                               comp_name = "conf",
+                               expo_name = "n",
+                               loss_name = "Y",
+                               n_cuts = 6)
+
+actuarialmetrics::dbl_lift_chart(table_to_g,
+                                 Prem_names = c("ign",
+                                                "conf"))
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
