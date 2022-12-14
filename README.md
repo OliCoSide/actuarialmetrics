@@ -69,6 +69,8 @@ actuarialmetrics::dbl_lift_chart(table_to_g,
                                                 "conf"))
 ```
 
+![](picture/example_dbl_chart.png)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
