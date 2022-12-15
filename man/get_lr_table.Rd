@@ -8,8 +8,8 @@ get_lr_table(
   pred_table,
   ref_name,
   comp_name,
-  expo_name = "Exposure",
-  loss_name = "ClaimNbResp",
+  expo_name = NULL,
+  loss_name = NULL,
   n_cuts = 10,
   balance = TRUE
 )
