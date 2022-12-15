@@ -2,7 +2,7 @@ Package: actuarialmetrics
 Title: Actuarial science tools for R
 Version: 0.0.0.9000
 Authors@R: 
-    person("Olivier", "Côté", , "olivier.cote.12@ulaval.ca", role = c("aut"))
+    person("Olivier", "Côté", , "olivier.cote.12@ulaval.ca", role = c("aut", "cre"))
 Description: Package that builds actuarial science tools with R. The pacakge offer simple visualisation for classic model evaluation tools such as double lift charts, loss ratios lift charts or gini index curves. 
 License: MIT + file LICENSE
 Encoding: UTF-8
