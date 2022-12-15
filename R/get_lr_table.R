@@ -1,12 +1,22 @@
-#' Load a Matrix
+#' Prepare a dataset for actuarial tools
 #'
-#' This function loads a file as a matrix. It assumes that the first column
-#' contains the rownames and the subsequent columns are the sample identifiers.
-#' Any rows with duplicated row names will be dropped with the first one being
-#' kepted.
+#' @param pred_table A \code{dataframe} containing a column per ratemaking structure (at least 2, \code{ref_name} and \code{comp_name}), a column for exposure (\code{expo_name}, which is optionnal) and a column for the response variable \code{loss_name}.
+#' @param ref_name The name of the reference ratemaking structure. It is the name of a column of \code{pred_table}.
+#' @param comp_name The name of the ratemaking structure to compare. It is the name of a column of \code{pred_table}.
+#' @param expo_name (\emph{optionnal}) The name of the loss exposure for each observation. It is the name of a column of \code{pred_table}. If nothing is specified, constant exposure of 1 is assumed accross all observations.
+#' @param loss_name The name of the response variable for each observation. It is the name of a column of \code{pred_table}.
+#' @param n_cuts The amount of groups for the data aggregation. The data will be sorted by relativity and grouped (equal exposure groups) by ascending relativity order. Default value is 10.
+#' @param balance boolean indicating wether or not to balance total premiums with the total response variable. The default value is \code{TRUE} since the objective of the analysis is to assess segmentation.
+#' @return A table ready to input to \emph{double lift chart} or \emph{Loss ratio lift} functions from \code{actuarialmetrics}.
+#' @examples
+#' library(actuarialmetrics)
+#' data("pred_table")
+#' table_to_g <- get_lr_table(pred_table,
+#'                            ref_name = "mod2",
+#'                              comp_name = "mod3",
+#'                              loss_name = "Y",
+#'                              n_cuts = 6)
 #'
-#' @param infile Path to the input file
-#' @return A matrix of the infile
 #' @export
 get_lr_table <- function(pred_table,
                          ref_name,
@@ -16,15 +26,15 @@ get_lr_table <- function(pred_table,
                          n_cuts = 10,
                          balance = TRUE){
 
-  if(is_null(loss_name)) stop("the user must specify the response variable using the 'loss_name' argument")
-  if(is_null(expo_name)) warning("Since no exposure is specified, the exposure is assume to be constant accross observations")
+  if(is.null(loss_name)) stop("the user must specify the response variable using the 'loss_name' argument")
+  if(is.null(expo_name)) warning("Since no exposure is specified, the exposure is assume to be constant accross observations")
 
   tbl <- data.frame("P_ref" = pred_table[[ref_name]],
                     "P_comp" = pred_table[[comp_name]],
                     "loss" = pred_table[[loss_name]])
 
   ## if there is a specified exposure
-  if(!is_null(expo_name)){
+  if(!is.null(expo_name)){
     ## add it to the table
     tbl$expo <- pred_table[[expo_name]]
   } else {
