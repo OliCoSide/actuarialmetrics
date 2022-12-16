@@ -37,16 +37,12 @@ dbl_lift_chart <- function(table_list,
   # col_dark <- rgb(t(col2rgb(col)/2), maxColorValue = 255)
   # col_light <- rgb(t(255 - ((255 - col2rgb(col))/10)), maxColorValue = 255)
 
+  ## X labels style
   if(is.null(angle_x_label)){
     angle_for_label <- ifelse(n_cuts >= 8, 20, 0)
   } else {
     angle_for_label <- angle_x_label
   }
-
-
-  balance_capt <- ifelse(table_list$balance,
-                         "et les primes sont balancees.",
-                         "")
 
   ## Type of graph
   if(scale == "dollar"){
@@ -85,6 +81,11 @@ dbl_lift_chart <- function(table_list,
 
     the_name_of_the_legend <- "Modele"
     the_loss_for_the_legend <- "Observee"
+
+    balance_capt <- ifelse(table_list$balance,
+                           "et les primes sont balancees.",
+                           "")
+
   } else if(language == "english") {
     if(scale == "dollar") {
       the_title <- "Losses per group of relativity"
@@ -105,6 +106,10 @@ dbl_lift_chart <- function(table_list,
 
     the_name_of_the_legend <- "Model"
     the_loss_for_the_legend <- "Observed"
+
+    balance_capt <- ifelse(table_list$balance,
+                           "and premiums are balanced.",
+                           "")
   } else {
     stop("Supported values for language are 'french' and 'english'.")
   }
@@ -146,7 +151,8 @@ dbl_lift_chart <- function(table_list,
          caption = the_caption,
          x= the_x,
          y= the_y) +
-    theme( axis.text.x = element_text(angle = angle_for_label)) +
+    theme( axis.text.x = element_text(angle = angle_for_label,
+                                      hjust = 1)) +
     scale_color_brewer(palette = palette,
                        name= the_name_of_the_legend,
                        breaks=unique(table_to_graph$variable),
