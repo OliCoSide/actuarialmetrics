@@ -11,8 +11,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
         dplyr,
-        ggplot2,
+        ggplot2 (>= 3.4.0),
         RColorBrewer,
         latex2exp,
+        reshape2,
 Depends: 
     R (>= 2.10)
