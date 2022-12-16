@@ -40,7 +40,7 @@ dbl_lift_chart <- function(table_list,
   if(is.null(angle_x_label)){
     angle_for_label <- ifelse(n_cuts >= 8, 20, 0)
   } else {
-    agle_for_label <- angle_x_label
+    angle_for_label <- angle_x_label
   }
 
 
@@ -156,8 +156,10 @@ dbl_lift_chart <- function(table_list,
                                        " (comp)"),
                                 unlist(ifelse(scale == "dollar",
                                        the_loss_for_the_legend,
-                                       list(NULL))))) #+
-    #geom_hline(yintercept=1, alpha = 0.4, lty = 2, size =0.6 )
+                                       list(NULL))))) +
+    geom_hline(yintercept= unlist(ifelse(scale == "dollar",
+                                  list(NULL),
+                                  1)), alpha = 0.4, lty = 2, size =0.6 )
   ## "Viridis", "Plasma, "Purple-Orange"
   ## "Zissou1", "SunsetDark"
   return(g)
