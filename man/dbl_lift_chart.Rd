@@ -7,7 +7,10 @@
 dbl_lift_chart(
   table_list,
   Prem_names = c(table_list$ref_name, table_list$comp_name),
-  palette = "Dark2"
+  palette = "Dark2",
+  scale = "dollar",
+  style = 2,
+  language = "french"
 )
 }
 \arguments{
@@ -16,6 +19,12 @@ dbl_lift_chart(
 \item{Prem_names}{The names of the ratemaking structure to compare. The default is given in \code{table_list}}
 
 \item{palette}{The palette to use for the visualisation (from \code{Rcolorbrewer}). The default is \code{"Dark2"}.}
+
+\item{scale}{The scale to be used for the double lift chart. Default is \code{"obs"}. if anything other than \code{"obs"} is used, such as \code{"LR"}, the graph is scaled to the observed (The observed line is therefore removed).}
+
+\item{style}{The number of the style preset for the graph. This customizes the width of the line, the size of the points and the transparency of the line and the points. Default value is \code{2}.}
+
+\item{language}{The language to display text on axis. Supported values are \code{'french'} (default value) and \code{'english'}.}
 }
 \value{
 A \code{ggplot2} graph of a \emph{double lift chart}

@@ -13,5 +13,6 @@ Imports:
         dplyr,
         ggplot2,
         RColorBrewer,
+        latex2exp,
 Depends: 
     R (>= 2.10)

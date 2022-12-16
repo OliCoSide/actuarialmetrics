@@ -100,6 +100,7 @@ get_lr_table <- function(pred_table,
   l <- list("table" = LossRatio_table,
             "balance" = balance,
             "ref_name" = ref_name,
-            "comp_name" = comp_name)
+            "comp_name" = comp_name,
+            "expo_name" = expo_name)
   return(l)
 }
