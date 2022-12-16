@@ -6,6 +6,7 @@
 #' @param scale The scale to be used for the double lift chart. Default is \code{"obs"}. if anything other than \code{"obs"} is used, such as \code{"LR"}, the graph is scaled to the observed (The observed line is therefore removed).
 #' @param style The number of the style preset for the graph. This customizes the width of the line, the size of the points and the transparency of the line and the points. Default value is \code{2}.
 #' @param language The language to display text on axis. Supported values are \code{'french'} (default value) and \code{'english'}.
+#' @param angle_x_label The angle of the \code{x} labels. For display and readability purpose only.
 #' @return A \code{ggplot2} graph of a \emph{double lift chart}
 #' @examples
 #' library(actuarialmetrics)
@@ -24,7 +25,8 @@ dbl_lift_chart <- function(table_list,
                            palette = "Dark2",
                            scale = "dollar",
                            style = 2,
-                           language = "french"){
+                           language = "french",
+                           angle_x_label = NULL){
 
   ## we get the table from the list
   table <- table_list$table
@@ -35,7 +37,12 @@ dbl_lift_chart <- function(table_list,
   # col_dark <- rgb(t(col2rgb(col)/2), maxColorValue = 255)
   # col_light <- rgb(t(255 - ((255 - col2rgb(col))/10)), maxColorValue = 255)
 
-  angle_for_label <- ifelse(n_cuts >= 8, 20, 0)
+  if(is.null(angle_x_label)){
+    angle_for_label <- ifelse(n_cuts >= 8, 20, 0)
+  } else {
+    agle_for_label <- angle_x_label
+  }
+
 
   balance_capt <- ifelse(table_list$balance,
                          "et les primes sont balancees.",

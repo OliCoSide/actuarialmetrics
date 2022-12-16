@@ -10,7 +10,8 @@ dbl_lift_chart(
   palette = "Dark2",
   scale = "dollar",
   style = 2,
-  language = "french"
+  language = "french",
+  angle_x_label = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ dbl_lift_chart(
 \item{style}{The number of the style preset for the graph. This customizes the width of the line, the size of the points and the transparency of the line and the points. Default value is \code{2}.}
 
 \item{language}{The language to display text on axis. Supported values are \code{'french'} (default value) and \code{'english'}.}
+
+\item{angle_x_label}{The angle of the \code{x} labels. For display and readability purpose only.}
 }
 \value{
 A \code{ggplot2} graph of a \emph{double lift chart}
