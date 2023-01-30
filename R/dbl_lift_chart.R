@@ -75,8 +75,7 @@ dbl_lift_chart <- function(table_list,
                            Prem_names[2],
                            "/",
                            Prem_names[1])
-    the_caption <- paste0("Les primes ", Prem_names[1],
-                          " sont les primes de reference ", balance_capt)
+
     the_x <- "Relativite"
 
     the_name_of_the_legend <- "Modele"
@@ -85,6 +84,8 @@ dbl_lift_chart <- function(table_list,
     balance_capt <- ifelse(table_list$balance,
                            "et les primes sont balancees.",
                            "")
+    the_caption <- paste0("Les primes ", Prem_names[1],
+                          " sont les primes de reference ", balance_capt)
 
   } else if(language == "english") {
     if(scale == "dollar") {
@@ -100,8 +101,7 @@ dbl_lift_chart <- function(table_list,
                            Prem_names[2],
                            "/",
                            Prem_names[1])
-    the_caption <- paste0("Premium ", Prem_names[1],
-                          " are the reference ", balance_capt)
+
     the_x <- "Relativity"
 
     the_name_of_the_legend <- "Model"
@@ -110,6 +110,8 @@ dbl_lift_chart <- function(table_list,
     balance_capt <- ifelse(table_list$balance,
                            "and premiums are balanced.",
                            "")
+    the_caption <- paste0("Premium ", Prem_names[1],
+                          " are the reference ", balance_capt)
   } else {
     stop("Supported values for language are 'french' and 'english'.")
   }
