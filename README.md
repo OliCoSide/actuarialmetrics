@@ -90,6 +90,8 @@ actuarialmetrics::dbl_lift_chart(table_to_g,
 - [ ] Make a pretty example for the `readme`
 - [ ] Arrange packages requirements for smooth use
 - [ ] Add dataset to my package
+- [ ] Add equation on graphs using `latex2exp`
+- [ ] Add exploratory functions from industrial partnership
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
