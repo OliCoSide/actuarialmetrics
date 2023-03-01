@@ -33,6 +33,8 @@
 
 <h1 align="center"> actuarialmetrics (R package)</h3>
 
+In development. Expected delivery date : August 2023. 
+
 <!-- Access -->
 ## Access
 
