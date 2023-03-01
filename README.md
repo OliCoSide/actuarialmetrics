@@ -92,6 +92,7 @@ actuarialmetrics::dbl_lift_chart(table_to_g,
 - [ ] Add dataset to my package
 - [ ] Add equation on graphs using `latex2exp`
 - [ ] Add exploratory functions from industrial partnership
+- [ ] Make a general function with an argument to specify the type of graph to use
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
