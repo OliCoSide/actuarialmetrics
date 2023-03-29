@@ -81,6 +81,20 @@ actuarialmetrics::dbl_lift_chart(table_to_g,
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ROADMAP -->
+## Ideas/To do 
+
+- [ ] Make groups based on distance metrics (k-means) for various graphs
+- [ ] Make groups based on PCA? 
+- [ ] Finish documentation
+- [ ] Make a pretty example for the `readme`
+- [ ] Arrange packages requirements for smooth use
+- [ ] Add dataset to my package
+- [ ] Add equation on graphs using `latex2exp`
+- [ ] Add exploratory functions from industrial partnership
+- [ ] Make a general function with an argument to specify the type of graph to use
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 ## Contact
